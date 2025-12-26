@@ -30,6 +30,24 @@ We now offer the following two style sheets;
 - `spase2jpcoar.xsl` Convert from SPASE 2.4.0 to JPCOAR v1.0.2
 - `spase2jpcoar2_0.xsl` Convert from SPASE 2.6.1 to JPCOAR v2.0.0
 
+## Notes
+
+これらのスタイルシートには、 `publisher` 要素の値として「名古屋大学 / Nagoya University」が埋め込まれています。他の機関で利用する場合、この部分をテキストエディタ等で書き換えてご利用ください。
+
+These stylesheets have “名古屋大学 / Nagoya University” embedded as the value of the `publisher` element. When using them at other institutions, please edit this portion using a text editor or similar tool.
+
+        <dc:publisher xml:lang="ja">名古屋大学</dc:publisher>
+        <dc:publisher xml:lang="en">Nagoya University</dc:publisher>
+
+`xsltproc` コマンドで変換した XML 文書は改行やインデントを含みません。読みやすく整形した XML にしたい場合は、 `xmllint` コマンドを利用してください。
+
+XML documents transformed using the `xsltproc` command do not include line breaks or indentation. To obtain well-formed XML for readability, use the `xmllint` command.
+
+```
+$ sudo apt install libxml2-utils
+$ xsltproc spase2jpcoar.xsl spase_sample.xml | xmllint --format - > jpcoar_sample.xml
+```
+
 ## Authors
 
 [IUGONET project team](http://www.iugonet.org/contact/)
