@@ -294,9 +294,9 @@
             <xsl:value-of select="spase:Project"/>
         </jpcoar:awardTitle>
         <xsl:if test="spase:AwardNumber">
-            <datacite:awardNumber>
+            <jpcoar:awardNumber>
                 <xsl:value-of select="spase:AwardNumber"/>
-            </datacite:awardNumber>
+            </jpcoar:awardNumber>
         </xsl:if>
     </jpcoar:fundingReference>
 </xsl:template>
